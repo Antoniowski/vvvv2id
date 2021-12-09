@@ -16,6 +16,8 @@
 		6AC1FDDA2762B4E4001FFBD9 /* VVVV2IDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1FDD92762B4E4001FFBD9 /* VVVV2IDTests.swift */; };
 		6AC1FDE42762B4E4001FFBD9 /* VVVV2IDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1FDE32762B4E4001FFBD9 /* VVVV2IDUITests.swift */; };
 		6AC1FDE62762B4E4001FFBD9 /* VVVV2IDUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1FDE52762B4E4001FFBD9 /* VVVV2IDUITestsLaunchTests.swift */; };
+		6AC1FDF32762B665001FFBD9 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1FDF22762B665001FFBD9 /* Components.swift */; };
+		6AC1FDF52762B681001FFBD9 /* GenericValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1FDF42762B681001FFBD9 /* GenericValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		6AC1FDDF2762B4E4001FFBD9 /* VVVV2IDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VVVV2IDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC1FDE32762B4E4001FFBD9 /* VVVV2IDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VVVV2IDUITests.swift; sourceTree = "<group>"; };
 		6AC1FDE52762B4E4001FFBD9 /* VVVV2IDUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VVVV2IDUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6AC1FDF22762B665001FFBD9 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		6AC1FDF42762B681001FFBD9 /* GenericValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				6AC1FDC32762B4E3001FFBD9 /* VVVV2IDApp.swift */,
 				6AC1FDC52762B4E3001FFBD9 /* ContentView.swift */,
 				6AC1FDC72762B4E4001FFBD9 /* Assets.xcassets */,
+				6AC1FDF22762B665001FFBD9 /* Components.swift */,
+				6AC1FDF42762B681001FFBD9 /* GenericValues.swift */,
 				6AC1FDCC2762B4E4001FFBD9 /* Persistence.swift */,
 				6AC1FDCE2762B4E4001FFBD9 /* VVVV2ID.xcdatamodeld */,
 				6AC1FDC92762B4E4001FFBD9 /* Preview Content */,
@@ -265,6 +271,8 @@
 			files = (
 				6AC1FDCD2762B4E4001FFBD9 /* Persistence.swift in Sources */,
 				6AC1FDC62762B4E3001FFBD9 /* ContentView.swift in Sources */,
+				6AC1FDF32762B665001FFBD9 /* Components.swift in Sources */,
+				6AC1FDF52762B681001FFBD9 /* GenericValues.swift in Sources */,
 				6AC1FDC42762B4E3001FFBD9 /* VVVV2IDApp.swift in Sources */,
 				6AC1FDD02762B4E4001FFBD9 /* VVVV2ID.xcdatamodeld in Sources */,
 			);

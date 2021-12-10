@@ -18,8 +18,8 @@ extension UIScreen{
 
 
 var evangelionEpisodes: [Episode] = [
-    Episode(id: UUID(), title: "ANGEL ATTACK", description: evangelionEpisode1, number: 1),
-    Episode(id: UUID(), title: "THE BEAST", description: evangelionEpisode2, number: 2)
+    Episode(id: UUID(), title: "ANGEL ATTACK", description: evangelionEpisode1, number: 1, isWatched: true),
+    Episode(id: UUID(), title: "THE BEAST", description: evangelionEpisode2, number: 2, isWatched: false)
 ]
 
 //ANIME, FILM, SERIE TV TEST ITEMS

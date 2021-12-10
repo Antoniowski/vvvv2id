@@ -77,9 +77,45 @@ struct MainElement: View{
     }
 }
 
+//EPISODE ELEMENT
 
-struct MainElement_Preview: PreviewProvider {
+struct EpisodeSelector: View{
+    @EnvironmentObject var movieContainer: MovieContainer
+    @EnvironmentObject var seriesContainer: SeriesContainer
+    
+    var show: GenericInfos
+    var episode: Episode
+    
+    var body: some View{
+        Button(action: {}, label: {
+            HStack{
+                VStack{
+                    if(episode.isWatched == true){
+                        Image(systemName: "checkmark")
+                            .frame(height: UIScreen.screenHeight/7, alignment: .center)
+                            .foregroundColor(.green)
+                    }
+                }
+                .frame(width: UIScreen.screenWidth/20)
+                VStack(alignment: .leading){
+                    Text("Episodio \(episode.number) - \(episode.title)")
+                        .bold()
+                    Text("\(episode.description)")
+                }
+                .padding()
+                Image(systemName: "play.circle.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: UIScreen.screenWidth/4, height: UIScreen.screenHeight/20)
+            }
+            .frame(height: UIScreen.screenHeight/7)
+        })
+    }
+}
+
+
+struct EpisodeSelector_Preview: PreviewProvider {
     static var previews: some View {
-        MainElement()
+        EpisodeSelector(show: evangelion, episode: evangelion.episodes[0])
     }
 }

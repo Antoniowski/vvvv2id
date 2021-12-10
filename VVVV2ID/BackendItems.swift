@@ -42,7 +42,28 @@ struct Movie: Identifiable, GenericInfos {
     var vote: Float
 }
 
-struct Series: Identifiable, GenericInfos {
+struct Series: Identifiable, GenericInfos, Hashable {
+    static func == (lhs: Series, rhs: Series) -> Bool {
+        if(
+        lhs.name == rhs.name &&
+        lhs.id == rhs.id &&
+        lhs.description == rhs.description &&
+        lhs.poster == rhs.poster &&
+        lhs.director == rhs.director &&
+        lhs.yearOfRelease == rhs.yearOfRelease &&
+        lhs.favoriteNum == rhs.favoriteNum &&
+        lhs.views == rhs.views &&
+        lhs.isFavorite == rhs.isFavorite &&
+        lhs.watched == rhs.watched &&
+        lhs.category == rhs.category &&
+        lhs.episodesNum == rhs.episodesNum &&
+        lhs.episodes == rhs.episodes){
+            return true
+        }else{
+            return false
+        }
+    }
+
     var id: UUID
     var name: String
     var description: String
@@ -57,11 +78,16 @@ struct Series: Identifiable, GenericInfos {
     
     var episodesNum: Int
     var episodes: [Episode]
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+    }
 }
 
-struct Episode: Identifiable {
+struct Episode: Identifiable, Hashable, Equatable {
     var id: UUID
     var title: String
     var description: String
     var number: Int
+    var isWatched: Bool
 }

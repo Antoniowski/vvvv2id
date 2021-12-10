@@ -16,6 +16,7 @@ struct VVVV2IDApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.dark)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(movieContainer)
                 .environmentObject(seriesContainer)

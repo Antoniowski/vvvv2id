@@ -9,6 +9,9 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @EnvironmentObject var movieContainer: MovieContainer
+    @EnvironmentObject var seriesContainer: SeriesContainer
+    
     var body: some View{
         TabView{
             animeView

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-class MovieContainer{
-    private var movies: [Movie]
+class MovieContainer: ObservableObject{
+    @Published private var movies: [Movie]
     
     init(){
         self.movies = []
@@ -31,8 +31,8 @@ class MovieContainer{
     }
 }
 
-class SeriesContainer{
-    private var series: [Series]
+class SeriesContainer: ObservableObject{
+    @Published private var series: [Series]
     
     init(){
         self.series = []

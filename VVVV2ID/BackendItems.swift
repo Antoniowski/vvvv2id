@@ -56,7 +56,7 @@ struct Series: Identifiable, GenericInfos {
     var category: SeriesCategory
     
     var episodesNum: Int
-    var episodes: Episode
+    var episodes: [Episode]
 }
 
 struct Episode: Identifiable {

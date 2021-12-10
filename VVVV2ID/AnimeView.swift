@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AnimeView: View{
+    @EnvironmentObject var movieContainer: MovieContainer
+    @EnvironmentObject var seriesContainer: SeriesContainer
+    
     var body: some View{
         ScrollView{
             HStack{
@@ -16,16 +19,51 @@ struct AnimeView: View{
             .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
             .border(.red)
             
-            ScrollView(.horizontal){
-                
+//          FIRST SCROLLVIEW
+            VStack{
+                HStack{
+                    Text("Continua a guardare")
+                        .font(.title2)
+                        .bold()
+                    Spacer()
+                }
+                .padding(.horizontal)
+                ScrollView(.horizontal, showsIndicators: false){
+                    HStack{
+                        ForEach(0...9, id: \.self){_ in
+                            ElementSelector(show: evangelion)
+                        }
+                    }
+                    .padding(2)
+                }
+                .frame(width: UIScreen.screenWidth)
+                .padding(.horizontal)
             }
-            .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/5)
-            .border(.red)
+            .frame(alignment: .leading)
             
-            ScrollView{
-                
+            
+//            SECOND SCROLLVIEW
+            VStack{
+                HStack{
+                    Text("Nuove Uscite")
+                        .font(.title2)
+                        .bold()
+                    Spacer()
+                }
+                .padding(.horizontal)
+                ScrollView(.horizontal, showsIndicators: false){
+                    HStack{
+                        ForEach(0...9, id: \.self){_ in
+                            ElementSelector(show: evangelion)
+                        }
+                    }
+                    .padding(2)
+                }
+                .frame(width: UIScreen.screenWidth)
+                .padding(.horizontal)
             }
-        }        
+            .frame(alignment: .leading)
+        }
     }
 }
 

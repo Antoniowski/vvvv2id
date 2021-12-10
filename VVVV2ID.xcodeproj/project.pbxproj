@@ -125,12 +125,12 @@
 				6AC1FDC72762B4E4001FFBD9 /* Assets.xcassets */,
 				6AC1FDF22762B665001FFBD9 /* Components.swift */,
 				6AC1FDF42762B681001FFBD9 /* GenericValues.swift */,
-				6AC1FDCC2762B4E4001FFBD9 /* Persistence.swift */,
 				6AC1FDF82762CA18001FFBD9 /* AnimeView.swift */,
 				6AC1FDF62762BD71001FFBD9 /* BackendItems.swift */,
 				6A3048FC2763982400CABFA0 /* DataHandler.swift */,
 				6A3048FE2763A17600CABFA0 /* ImagesValues.swift */,
 				6A3049012763A77000CABFA0 /* Descriptions.swift */,
+				6AC1FDCC2762B4E4001FFBD9 /* Persistence.swift */,
 				6AC1FDCE2762B4E4001FFBD9 /* VVVV2ID.xcdatamodeld */,
 				6AC1FDC92762B4E4001FFBD9 /* Preview Content */,
 			);

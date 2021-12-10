@@ -24,6 +24,7 @@ struct AnimeView: View{
                 
             }
         }
+        .background(Color("backgroundColor"))
         
     }
 }

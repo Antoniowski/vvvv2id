@@ -28,6 +28,7 @@ struct ContentView: View {
                     Label("Cerca", systemImage: "magnifyingglass")
                 })
         }
+        .preferredColorScheme(.dark)
     }
 }
 

@@ -102,6 +102,7 @@ struct EpisodeSelector: View{
                         .bold()
                     Text("\(episode.description)")
                 }
+                .frame(minWidth: 0, maxWidth: .infinity)
                 .padding()
                 Image(systemName: "play.circle.fill")
                     .resizable()

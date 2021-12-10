@@ -9,23 +9,23 @@ import SwiftUI
 
 struct AnimeView: View{
     var body: some View{
-        VStack{
+        ScrollView{
             HStack{
                 
             }
             .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
             .border(.red)
             
-            ScrollView{
+            ScrollView(.horizontal){
                 
             }
+            .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/5)
+            .border(.red)
             
             ScrollView{
                 
             }
-        }
-        .background(Color("backgroundColor"))
-        
+        }        
     }
 }
 

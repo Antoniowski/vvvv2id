@@ -43,6 +43,12 @@ private extension ContentView{
                             .resizable()
                             .scaledToFit()
                     })
+                    
+                    ToolbarItem(placement: .navigationBarTrailing, content: {
+                        Circle()
+                            .foregroundColor(.accentColor)
+                            .frame(width: UIScreen.screenWidth/11, height: UIScreen.screenWidth/11)
+                    })
                 }
         }
     }

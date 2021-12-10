@@ -13,11 +13,10 @@ struct AnimeView: View{
     
     var body: some View{
         ScrollView{
-            HStack{
-                
-            }
-            .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
-            .border(.red)
+//          SEZIONE NOVITA'
+            MainElement()
+                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
+                .border(.red)
             
 //          FIRST SCROLLVIEW
             VStack{

@@ -34,8 +34,52 @@ struct ElementSelector: View{
 //VIEWS COMPONENTS
 
 
-struct ElementSelector_Preview: PreviewProvider {
+struct MainElement: View{
+    var shows: [GenericInfos] = []
+    
+    var body: some View{
+        TabView{
+            ZStack(alignment: .bottomLeading){
+                LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
+                    .opacity(0.5)
+                VStack(alignment: .leading, spacing: 2){
+                    Text("Demon Slayer")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(.white)
+                    Text("Anime - 24 episodi")
+                        .foregroundColor(.white)
+                    
+                }.padding()
+            }
+            .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
+            .background(Image("DemonSlayerFullPic")
+                            .resizable())
+            
+            ZStack(alignment: .bottomLeading){
+                LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
+                    .opacity(0.5)
+                VStack(alignment: .leading, spacing: 2){
+                    Text("Demon Slayer")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(.white)
+                    Text("Anime - 24 episodi")
+                        .foregroundColor(.white)
+                    
+                }.padding()
+            }
+            .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
+            .background(Image("DemonSlayerFullPic")
+                            .resizable())
+        }
+        .tabViewStyle(.page)
+    }
+}
+
+
+struct MainElement_Preview: PreviewProvider {
     static var previews: some View {
-        ElementSelector(show: evangelion)
+        MainElement()
     }
 }

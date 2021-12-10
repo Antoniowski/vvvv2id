@@ -45,6 +45,7 @@ private extension ContentView{
                         Image("vvvvidlogo")
                             .resizable()
                             .scaledToFit()
+                            .padding(.bottom)
                     })
                     
                     ToolbarItem(placement: .navigationBarTrailing, content: {

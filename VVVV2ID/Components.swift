@@ -100,8 +100,10 @@ struct EpisodeSelector: View{
                 VStack(alignment: .leading){
                     Text("Episodio \(episode.number) - \(episode.title)")
                         .bold()
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     Text("\(episode.description)")
                         .foregroundColor(.secondary)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding()
@@ -170,6 +172,6 @@ struct SearchElement: View{
 struct SearchElement_Preview:
     PreviewProvider {
     static var previews: some View {
-        ElementSelector(show: evangelion)
+        EpisodeSelector(show: jojoVentoAureo, episode: jojoEpisodes[0])
     }
 }

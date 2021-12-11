@@ -101,6 +101,7 @@ struct EpisodeSelector: View{
                     Text("Episodio \(episode.number) - \(episode.title)")
                         .bold()
                     Text("\(episode.description)")
+                        .foregroundColor(.secondary)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding()
@@ -122,20 +123,31 @@ struct SearchElement: View{
     @EnvironmentObject var seriesContainer: SeriesContainer
     
     var show: GenericInfos
+    var showGenres: String{
+        var appoggio: String = ""
+        for x in 0..<show.genres.count{
+            if(x == show.genres.count-1){
+                appoggio += "\(show.genres[x])"
+            }else{
+                appoggio += "\(show.genres[x]), "
+            }
+        }
+        return "\(appoggio)"
+    }
     var body: some View{
         HStack(spacing: 15){
-            Image("EvaPoster")
+            show.poster
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(cornerRadiusValue)
                 .shadow(color: .white, radius: 1, x: 0, y: 0)
             
             VStack(alignment: .leading){
-                Text("Title")
-                    .font(.title)
+                Text("\(show.name)")
+                    .font(.title3)
                     .bold()
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                Text("Genere: \nAnno: \nRegista:\nEpisodi:").foregroundColor(.secondary)
+                Text("**Genere:** \(showGenres) \n**Anno:** \(show.yearOfRelease) \n**Regista:** \(show.director)").font(.caption).foregroundColor(.secondary)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
             }
             .frame(minWidth: 0, maxWidth: .infinity)
@@ -149,7 +161,7 @@ struct SearchElement: View{
             .frame(width: UIScreen.screenWidth/20, height: 5, alignment: .center)
             .padding(5)
         }
-        .frame(height: UIScreen.screenHeight/10)
+        .frame(height: UIScreen.screenHeight/8)
         .padding(5)
     }
 }

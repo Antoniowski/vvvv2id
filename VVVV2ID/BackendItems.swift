@@ -13,9 +13,31 @@ enum SeriesCategory{
     case film
 }
 
+enum Genres: String{
+    case Azione
+    case Avventura
+    case Commedia
+    case Drammatico
+    case Storico
+    case Horror
+    case Fantascienza
+    case Fantasy
+    case Western
+    case Shonen
+    case Shoujo
+    case Seinen
+    case Josei
+    case Ecchi
+    case Harem
+    case Isekai
+    case Mecha
+    case SliceOfLife
+}
+
 protocol GenericInfos {
     var name: String {get set}
     var description: String {get set}
+    var genres: [Genres] {get set}
     var poster: Image {get set}
     var director: String {get set}
     var yearOfRelease: Int {get set}
@@ -30,6 +52,7 @@ struct Movie: Identifiable, GenericInfos {
     var id: UUID
     var name: String
     var description: String
+    var genres: [Genres]
     var poster: Image
     var director: String
     var yearOfRelease: Int
@@ -49,6 +72,7 @@ struct Series: Identifiable, GenericInfos, Hashable {
         lhs.id == rhs.id &&
         lhs.description == rhs.description &&
         lhs.poster == rhs.poster &&
+        lhs.genres == rhs.genres &&
         lhs.director == rhs.director &&
         lhs.yearOfRelease == rhs.yearOfRelease &&
         lhs.favoriteNum == rhs.favoriteNum &&
@@ -67,6 +91,7 @@ struct Series: Identifiable, GenericInfos, Hashable {
     var id: UUID
     var name: String
     var description: String
+    var genres: [Genres]
     var poster: Image
     var director: String
     var yearOfRelease: Int

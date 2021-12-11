@@ -24,4 +24,4 @@ var evangelionEpisodes: [Episode] = [
 
 //ANIME, FILM, SERIE TV TEST ITEMS
 
-var evangelion = Series(id: UUID(), name: "Neo Genesis Evangelion", description: evangelionDescription, poster: Image("EvaPoster"), director: "Hideaki Anno", yearOfRelease: 1995, favoriteNum: 1832942, views: 8231390, isFavorite: false, watched: true, category: .anime, episodesNum: 26, episodes: evangelionEpisodes)
+var evangelion = Series(id: UUID(), name: "Neo Genesis Evangelion", description: evangelionDescription,genres: [.Mecha, .Drammatico, .Azione], poster: Image("EvaPoster"), director: "Hideaki Anno", yearOfRelease: 1995, favoriteNum: 1832942, views: 8231390, isFavorite: false, watched: false, category: .anime, episodesNum: 26, episodes: evangelionEpisodes)

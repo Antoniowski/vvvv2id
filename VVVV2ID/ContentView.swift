@@ -26,7 +26,7 @@ struct ContentView: View {
                 .tabItem({
                     Label("Serie TV", systemImage: "tv")
                 })
-            Text("Cerca")
+            SearchView()
                 .tabItem({
                     Label("Cerca", systemImage: "magnifyingglass")
                 })

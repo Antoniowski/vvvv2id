@@ -11,15 +11,12 @@ struct SearchView: View{
     @EnvironmentObject var movieContainer: MovieContainer
     @EnvironmentObject var seriesContainer: SeriesContainer
     
-    var moviesTester: [Movie] = []
-    var animeTester: [Series] = [evangelion]
-    
     @State var searchText: String = ""
     var searchFilmResults: [Movie]{
         if searchText.isEmpty{
             return []
         }else{
-            return self.moviesTester
+            return self.movieContainer.GetAllMovies()
         }
     }
     
@@ -27,7 +24,7 @@ struct SearchView: View{
         if searchText.isEmpty{
             return []
         }else{
-            return self.animeTester.filter{$0.name.lowercased().contains(searchText.lowercased())}
+            return self.seriesContainer.GetAllSeries().filter{$0.name.lowercased().contains(searchText.lowercased())}
         }
     }
     var body: some View{

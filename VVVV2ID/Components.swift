@@ -149,7 +149,7 @@ struct SearchElement: View{
                     .font(.title3)
                     .bold()
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                Text("**Genere:** \(showGenres) \n**Anno:** \(show.yearOfRelease) \n**Regista:** \(show.director)").font(.caption).foregroundColor(.secondary)
+                Text("**Genere:** \(showGenres) \n**Anno:** \(String(show.yearOfRelease)) \n**Regista:** \(show.director)").font(.caption).foregroundColor(.secondary)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
             }
             .frame(minWidth: 0, maxWidth: .infinity)

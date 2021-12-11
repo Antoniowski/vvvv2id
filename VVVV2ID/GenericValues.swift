@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//GENERIC VALUS
+//GENERIC VALUES
 var cornerRadiusValue: CGFloat = 15
 
 extension UIScreen{
@@ -63,11 +63,11 @@ var attackOnTitan = Series(id: UUID(), name: "Attack on Titan", description: aot
 
 var jojoVentoAureo = Series(id: UUID(), name: "Le bizzarre avventure di Jojo: Vento Aureo", description: jojo5Description, genres: [.Avventura, .Fantasy, .Shonen], poster: Image("Jojo5Poster"), director: "Kohei Ashiya", yearOfRelease: 2018, favoriteNum: 1923843, views: 938234, isFavorite: false, watched: true, category: .anime, episodesNum: 39, episodes: jojoEpisodes)
 
-var attackOnTitan4 = Series(id: UUID(), name: "Attack on Titan - Final Season", description: "", genres: [.Shonen, .Drammatico, .Fantasy], poster: Image("AoT4Poster"), director: "Yūichirō Hayashi", yearOfRelease: 2020, favoriteNum: 130393, views: 391234, isFavorite: true, watched: true, category: .anime, episodesNum: 16, episodes: aot4Episodes)
+var attackOnTitan4 = Series(id: UUID(), name: "Attack on Titan - Final Season", description: aot4Description, genres: [.Shonen, .Drammatico, .Fantasy], poster: Image("AoT4Poster"), director: "Yūichirō Hayashi", yearOfRelease: 2020, favoriteNum: 130393, views: 391234, isFavorite: true, watched: true, category: .anime, episodesNum: 16, episodes: aot4Episodes)
 
-var onePunchMan = Series(id: UUID(), name: "One Punch Man", description: "", genres: [.Azione, .Commedia], poster: Image("OPPoster"), director: "Shingo Natsume", yearOfRelease: 2015, favoriteNum: 39138, views: 492043, isFavorite: false, watched: true, category: .anime, episodesNum: 12, episodes: OPMEpisodes)
+var onePunchMan = Series(id: UUID(), name: "One Punch Man", description: opmDescription, genres: [.Azione, .Commedia], poster: Image("OPPoster"), director: "Shingo Natsume", yearOfRelease: 2015, favoriteNum: 39138, views: 492043, isFavorite: false, watched: true, category: .anime, episodesNum: 12, episodes: OPMEpisodes)
 
-var deathNote = Series(id: UUID(), name: "Death Note", description: "", genres: [.Misterry, .Thriller], poster: Image("DeathNotePoster"), director: "Tetsurō Araki", yearOfRelease: 2006, favoriteNum: 2357859, views: 4048349, isFavorite: false, watched: true, category: .anime, episodesNum: 37, episodes: deathNoteEpisodes)
+var deathNote = Series(id: UUID(), name: "Death Note", description: deathNoteDescription, genres: [.Misterry, .Thriller], poster: Image("DeathNotePoster"), director: "Tetsurō Araki", yearOfRelease: 2006, favoriteNum: 2357859, views: 4048349, isFavorite: false, watched: true, category: .anime, episodesNum: 37, episodes: deathNoteEpisodes)
 
 
 

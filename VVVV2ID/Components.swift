@@ -11,20 +11,26 @@ struct ElementSelector: View{
     @EnvironmentObject var movieContainer: MovieContainer
     @EnvironmentObject var seriesContainer: SeriesContainer
     
-    var show: GenericInfos
+    var show: Series
     
     var body: some View{
+        NavigationLink(destination: {
+            SingleSeriesView(serie: show)
+        }, label: {
         VStack{
             show.poster
                 .resizable()
                 .frame(width: UIScreen.screenWidth/4, height: UIScreen.screenHeight/6)
                 .cornerRadius(cornerRadiusValue)
+                .shadow(color: .white, radius: 2, x: 0, y: 0)
+
             Text(show.name)
                 .font(.system(size: 10))
                 .multilineTextAlignment(.center)
+                .foregroundColor(.primary)
                 .frame(minWidth: 0, maxWidth: UIScreen.screenWidth/5, minHeight: 0, maxHeight: UIScreen.screenHeight/22)
         }
-        .shadow(color: .white, radius: 2, x: 0, y: 0)
+        })
     }
 }
 
@@ -36,44 +42,41 @@ struct ElementSelector: View{
 
 struct MainElement: View{
     var shows: [GenericInfos] = []
+    var numOfElement = 3
+    
+    private var timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+    
+    @State private var currentIndex = 0
     
     var body: some View{
-        TabView{
-            ZStack(alignment: .bottomLeading){
-                LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
-                    .opacity(0.7)
-                VStack(alignment: .leading, spacing: 2){
-                    Text("Demon Slayer")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundColor(.white)
-                    Text("Anime - 24 episodi")
-                        .foregroundColor(.secondary)
-                    
-                }.padding()
+        TabView(selection: $currentIndex){
+            ForEach(0..<numOfElement){ num in
+                ZStack(alignment: .bottomLeading){
+                    LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
+                        .opacity(0.7)
+                    VStack(alignment: .leading, spacing: 2){
+                        Text("Demon Slayer")
+                            .font(.largeTitle)
+                            .bold()
+                            .foregroundColor(.white)
+                        Text("Anime - 24 episodi")
+                            .foregroundColor(.secondary)
+                        
+                    }.padding()
+                }
+                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
+                .background(Image("DemonSlayerFullPic")
+                                .resizable())
+                .tag(num)
             }
-            .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
-            .background(Image("DemonSlayerFullPic")
-                            .resizable())
-            
-            ZStack(alignment: .bottomLeading){
-                LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
-                    .opacity(0.7)
-                VStack(alignment: .leading, spacing: 2){
-                    Text("Attack on Titan - Final Season")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundColor(.white)
-                    Text("Anime - 16 Episodi")
-                        .foregroundColor(.secondary)
-                    
-                }.padding()
-            }
-            .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
-            .background(Image("AoT4FullPic")
-                            .resizable())
         }
         .tabViewStyle(.page)
+        .onReceive(timer, perform: {_ in
+            withAnimation{
+                currentIndex = currentIndex < numOfElement ? currentIndex + 1 : 0
+            }
+            
+        })
     }
 }
 
@@ -83,7 +86,7 @@ struct EpisodeSelector: View{
     @EnvironmentObject var movieContainer: MovieContainer
     @EnvironmentObject var seriesContainer: SeriesContainer
     
-    var show: GenericInfos
+    var show: Series
     var episode: Episode
     
     var body: some View{
@@ -99,6 +102,7 @@ struct EpisodeSelector: View{
                 .frame(width: UIScreen.screenWidth/20)
                 VStack(alignment: .leading){
                     Text("Episodio \(episode.number) - \(episode.title)")
+                        .foregroundColor(.primary)
                         .bold()
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     Text("\(episode.description)")
@@ -110,6 +114,7 @@ struct EpisodeSelector: View{
                 Image(systemName: "play.circle.fill")
                     .resizable()
                     .scaledToFit()
+                    .foregroundColor(.white)
                     .frame(width: UIScreen.screenWidth/4, height: UIScreen.screenHeight/20)
             }
             .frame(height: UIScreen.screenHeight/7)
@@ -124,7 +129,7 @@ struct SearchElement: View{
     @EnvironmentObject var movieContainer: MovieContainer
     @EnvironmentObject var seriesContainer: SeriesContainer
     
-    var show: GenericInfos
+    var show: Series
     var showGenres: String{
         var appoggio: String = ""
         for x in 0..<show.genres.count{
@@ -137,6 +142,9 @@ struct SearchElement: View{
         return "\(appoggio)"
     }
     var body: some View{
+        NavigationLink(destination: {
+            SingleSeriesView(serie: show)
+        }, label: {
         HStack(spacing: 15){
             show.poster
                 .resizable()
@@ -164,7 +172,9 @@ struct SearchElement: View{
             .padding(5)
         }
         .frame(height: UIScreen.screenHeight/8)
-        .padding(5)
+            .padding(5)
+            
+        })
     }
 }
 
@@ -172,6 +182,6 @@ struct SearchElement: View{
 struct SearchElement_Preview:
     PreviewProvider {
     static var previews: some View {
-        EpisodeSelector(show: jojoVentoAureo, episode: jojoEpisodes[0])
+        MainElement()
     }
 }

@@ -27,6 +27,21 @@ var aotEpisode3 = "L'istruttore Keith Shadis si rivela un comandante duro e seve
 var aotEpisode4 = "Dopo due anni di addestramento le reclute sono diventate esperte nell'uso dell'Attrezzatura per il Movimento."
 
 
-//JOJO PART %
+//JOJO PART 5
 
 var jojo5Description = "Siamo nel 2001, il protagonista di questa quinta serie è Giorno Giovanna, figlio di Dio Brando e di una donna giapponese. Il suo vero nome sarebbe Haruno Shiobana, ma in seguito al matrimonio di sua madre con un italiano e al conseguente trasferimento in Italia il suo nome viene italianizzato. Il giovane vive a Napoli ed è in possesso di uno Stand chiamato Gold Experience. Seguendo il suo sogno di diventare una GangStar, entra a far parte dell'organizzazione mafiosa chiamata Passione e viene assegnato a un piccolo gruppo capitanato da Bruno Bucciarati, che come lui vorrebbe salire al potere per eliminare lo spaccio di droga dalle strade di Napoli."
+
+
+// DEATH NOTE
+
+var deathNoteDescription = "La storia racconta di Light, un brillante studente delle superiori che trova per caso un Death Note, un quaderno di proprietà dello shinigami (un dio della morte giapponese) Riuk, e grazie a cui Light può uccidere chiunque semplicemente annotandovi sopra il nome."
+
+//ONE PUNCH MAN
+
+var opmDescription = "In un mondo dove esistono mostri ed eroi, Saitama, un venticinquenne diventato calvo e fortissimo a seguito di un duro allenamento, ha deciso di diventare un eroe per hobby, ma neanche ciò riesce a ravvivare la sua apatia perché nessun nemico è alla sua altezza: tutti vanno al tappeto con un pugno."
+
+
+// AOT4
+
+var aot4Description = "Quarta stagione di Attack on Titan."
+

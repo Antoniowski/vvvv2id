@@ -115,8 +115,49 @@ struct EpisodeSelector: View{
 }
 
 
-struct EpisodeSelector_Preview: PreviewProvider {
+//SEARCH ELEMENT
+
+struct SearchElement: View{
+    @EnvironmentObject var movieContainer: MovieContainer
+    @EnvironmentObject var seriesContainer: SeriesContainer
+    
+    var show: GenericInfos
+    var body: some View{
+        HStack(spacing: 15){
+            Image("EvaPoster")
+                .resizable()
+                .scaledToFit()
+                .cornerRadius(cornerRadiusValue)
+                .shadow(color: .white, radius: 1, x: 0, y: 0)
+            
+            VStack(alignment: .leading){
+                Text("Title")
+                    .font(.title)
+                    .bold()
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                Text("Genere: \nAnno: \nRegista:\nEpisodi:").foregroundColor(.secondary)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+            }
+            .frame(minWidth: 0, maxWidth: .infinity)
+            VStack{
+                if show.watched == true{
+                    Image(systemName: "checkmark")
+                        .foregroundColor(.green)
+                }
+                
+            }
+            .frame(width: UIScreen.screenWidth/20, height: 5, alignment: .center)
+            .padding(5)
+        }
+        .frame(height: UIScreen.screenHeight/10)
+        .padding(5)
+    }
+}
+
+
+struct SearchElement_Preview:
+    PreviewProvider {
     static var previews: some View {
-        EpisodeSelector(show: evangelion, episode: evangelion.episodes[0])
+        SearchElement(show: evangelion)
     }
 }

@@ -34,7 +34,7 @@ struct SearchView: View{
         NavigationView{
             List{
                 ForEach(searchSeriesResults, id: \.self){serie in
-                    Text("\(serie.name)")
+                    SearchElement(show: evangelion)
                 }
             }
             .navigationTitle("Cerca")

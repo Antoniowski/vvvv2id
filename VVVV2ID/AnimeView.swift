@@ -15,7 +15,7 @@ struct AnimeView: View{
         ScrollView{
 //          SEZIONE NOVITA'
             MainElement()
-                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)  
+                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
 //          FIRST SCROLLVIEW
             VStack{
                 HStack{

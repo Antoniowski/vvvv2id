@@ -45,13 +45,13 @@ private extension ContentView{
                         Image("vvvvidlogo")
                             .resizable()
                             .scaledToFit()
-                            .padding(.bottom)
                     })
                     
                     ToolbarItem(placement: .navigationBarTrailing, content: {
                         Circle()
                             .foregroundColor(.accentColor)
                             .frame(width: UIScreen.screenWidth/11, height: UIScreen.screenWidth/11)
+                            .padding(8)
                     })
                 }
         }

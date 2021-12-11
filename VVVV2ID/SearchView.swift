@@ -34,7 +34,19 @@ struct SearchView: View{
                     SearchElement(show: serie)
                 }
             }
-            .navigationTitle("Cerca")
+            .toolbar{
+                ToolbarItem(placement: .principal, content: {
+                    Image("vvvvidlogo")
+                        .resizable()
+                        .scaledToFit()
+                })
+                
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    Circle()
+                        .foregroundColor(.accentColor)
+                        .frame(width: UIScreen.screenWidth/11, height: UIScreen.screenWidth/11)
+                })
+            }
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         }
         .preferredColorScheme(.dark)

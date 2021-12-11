@@ -11,7 +11,7 @@ import SwiftUI
 struct VVVV2IDApp: App {
     let persistenceController = PersistenceController.shared
     @StateObject var movieContainer = MovieContainer()
-    @StateObject var seriesContainer = SeriesContainer()
+    @StateObject var seriesContainer = SeriesContainer(seriesArray: testSeries)
 
     var body: some Scene {
         WindowGroup {

@@ -17,12 +17,12 @@ struct ElementSelector: View{
         VStack{
             show.poster
                 .resizable()
-                .frame(width: UIScreen.screenWidth/5, height: UIScreen.screenHeight/6)
+                .frame(width: UIScreen.screenWidth/4, height: UIScreen.screenHeight/6)
                 .cornerRadius(cornerRadiusValue)
             Text(show.name)
                 .font(.system(size: 10))
                 .multilineTextAlignment(.center)
-                .frame(width: UIScreen.screenWidth/5)
+                .frame(minWidth: 0, maxWidth: UIScreen.screenWidth/5, minHeight: 0, maxHeight: UIScreen.screenHeight/22)
         }
         .shadow(color: .white, radius: 2, x: 0, y: 0)
     }
@@ -41,14 +41,14 @@ struct MainElement: View{
         TabView{
             ZStack(alignment: .bottomLeading){
                 LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
-                    .opacity(0.5)
+                    .opacity(0.7)
                 VStack(alignment: .leading, spacing: 2){
                     Text("Demon Slayer")
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(.white)
                     Text("Anime - 24 episodi")
-                        .foregroundColor(.white)
+                        .foregroundColor(.secondary)
                     
                 }.padding()
             }
@@ -58,19 +58,19 @@ struct MainElement: View{
             
             ZStack(alignment: .bottomLeading){
                 LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
-                    .opacity(0.5)
+                    .opacity(0.7)
                 VStack(alignment: .leading, spacing: 2){
-                    Text("Demon Slayer")
+                    Text("Attack on Titan - Final Season")
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(.white)
-                    Text("Anime - 24 episodi")
-                        .foregroundColor(.white)
+                    Text("Anime - 16 Episodi")
+                        .foregroundColor(.secondary)
                     
                 }.padding()
             }
             .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
-            .background(Image("DemonSlayerFullPic")
+            .background(Image("AoT4FullPic")
                             .resizable())
         }
         .tabViewStyle(.page)
@@ -170,6 +170,6 @@ struct SearchElement: View{
 struct SearchElement_Preview:
     PreviewProvider {
     static var previews: some View {
-        SearchElement(show: evangelion)
+        ElementSelector(show: evangelion)
     }
 }

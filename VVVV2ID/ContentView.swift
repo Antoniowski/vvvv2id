@@ -60,6 +60,9 @@ private extension ContentView{
 
 
 struct ContentView_Preview: PreviewProvider {
+    @EnvironmentObject var movieContainer: MovieContainer
+    @EnvironmentObject var seriesContainer: SeriesContainer
+    
     static var previews: some View {
         ContentView()
     }

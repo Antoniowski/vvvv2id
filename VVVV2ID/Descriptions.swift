@@ -68,3 +68,10 @@ var aot4Episode3 = "In un momento di pausa, Reiner Braun ripensa alla sua vita: 
 
 var aot4Episode4 = "I vertici militari marleyani visitano la magione dei Tybur, facoltosa famiglia in possesso del Gigante Martello che non è vincolata dalla sorte dei suoi simili del popolo eldiano perché discendente dell'eroe che cento anni prima sconfisse le titaniche creature condannando gli eldiani ad un'era di schiavitù e ghettizzazione: Heros. "
 
+//DEMON SLAYER
+
+var demonSlayerDescription = "Giappone, Periodo Taishō. Tanjiro è il primogenito di una numerosa famiglia orfana del padre, che vive in un'isolata casa di montagna tra i boschi. Un giorno, tornando a casa dopo essere stato al villaggio a vendere il carbone, trova la madre e i fratelli massacrati, ad eccezione della sorella Nezuko che è stata trasformata in un demone, ma ha ancora qualche pensiero ed emozione umana. Tanjiro inizia così il suo viaggio in cerca di una cura per far tornare sua sorella di nuovo umana e per impedire che la stessa tragedia accaduta a loro possa accadere ad altri."
+
+var demonSlayerEpisode1 = "Un ragazzo cammina su un sentiero innevato portando in spalla la sorella ferita e la supplica di non morire, promettendole di volerla salvare ad ogni costo. Il giorno precedente Tanjiro è in procinto di recarsi al villaggio vicino per vendere carbone, quando viene fermato dai suoi fratellini Hanako e Shigeru che lo implorano di portarli con sé."
+
+var demonSlayerEpisode2 = "Tanjiro continua il viaggio verso il monte Sagiri, portando Nezuko in un cesto di paglia rivestito durante il giorno. Sulla strada due vengono attaccati da un altro demone che riescono a fermare tenendogli la testa bloccata da un'ascia contro un albero."

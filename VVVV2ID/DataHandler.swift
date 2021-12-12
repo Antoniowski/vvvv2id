@@ -57,7 +57,7 @@ class SeriesContainer: ObservableObject{
     func GetAllTVSeries()->[Series]{
         var tvSeries: [Series] = []
         for x in 0..<self.series.count{
-            if self.series[x].category == .tvSeries{
+            if self.series[x].category == .TvSeries{
                 tvSeries.append(self.series[x])
             }
         }
@@ -67,7 +67,7 @@ class SeriesContainer: ObservableObject{
     func GetTVSeriesByName(title: String)->Series{
         var tvSeries: [Series] = []
         for x in 0..<self.series.count{
-            if self.series[x].category == .tvSeries{
+            if self.series[x].category == .TvSeries{
                 tvSeries.append(self.series[x])
             }
         }
@@ -81,7 +81,7 @@ class SeriesContainer: ObservableObject{
     func GetAllAnime()->[Series]{
         var animes: [Series] = []
         for x in 0..<self.series.count{
-            if self.series[x].category == .anime{
+            if self.series[x].category == .Anime{
                 animes.append(self.series[x])
             }
         }
@@ -91,7 +91,7 @@ class SeriesContainer: ObservableObject{
     func GetAnimeByName(title: String)->Series{
         var animes: [Series] = []
         for x in 0..<self.series.count{
-            if self.series[x].category == .anime{
+            if self.series[x].category == .Anime{
                 animes.append(self.series[x])
             }
         }

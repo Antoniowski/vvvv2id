@@ -51,10 +51,10 @@ struct MainElement: View{
     
     var body: some View{
         TabView(selection: $currentIndex){
-            ForEach(0..<numOfElement){ num in
+            ForEach(0..<testShowPreview.count){ num in
                 ZStack(alignment: .bottomLeading){
                     
-                    Image("DemonSlayerFullPic")
+                    testShowPreview[num].1
                         .resizable()
                         .cornerRadius(cornerRadiusValue)
                     
@@ -63,11 +63,11 @@ struct MainElement: View{
                         .cornerRadius(cornerRadiusValue)
                     
                     VStack(alignment: .leading, spacing: 2){
-                        Text("Demon Slayer")
+                        Text(testShowPreview[num].0.name)
                             .font(.largeTitle)
                             .bold()
                             .foregroundColor(.white)
-                        Text("Anime - 24 episodi")
+                        Text("\(testShowPreview[num].0.category.rawValue)")
                             .foregroundColor(.secondary)
                         
                     }.padding()

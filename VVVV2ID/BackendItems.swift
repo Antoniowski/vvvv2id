@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-enum SeriesCategory{
-    case anime
-    case tvSeries
-    case film
+enum SeriesCategory: String{
+    case Anime
+    case TvSeries
+    case Film
 }
 
 enum Genres: String{

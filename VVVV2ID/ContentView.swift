@@ -48,10 +48,16 @@ private extension ContentView{
                     })
                     
                     ToolbarItem(placement: .navigationBarTrailing, content: {
-                        Circle()
+                        Button(action: {}, label: {
+                            ZStack{
+                                Circle()
+                                Image(systemName: "character")
+                                    .foregroundColor(.white)
+                            }
                             .foregroundColor(.accentColor)
                             .frame(width: UIScreen.screenWidth/11, height: UIScreen.screenWidth/11)
                             .padding(8)
+                        })
                     })
                 }
         }

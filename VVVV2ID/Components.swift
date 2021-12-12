@@ -52,31 +52,35 @@ struct MainElement: View{
     var body: some View{
         TabView(selection: $currentIndex){
             ForEach(0..<testShowPreview.count){ num in
-                ZStack(alignment: .bottomLeading){
-                    
-                    testShowPreview[num].1
-                        .resizable()
-                        .cornerRadius(cornerRadiusValue)
-                    
-                    LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
-                        .opacity(0.7)
-                        .cornerRadius(cornerRadiusValue)
-                    
-                    VStack(alignment: .leading, spacing: 2){
-                        Text(testShowPreview[num].0.name)
-                            .font(.largeTitle)
-                            .bold()
-                            .foregroundColor(.white)
-                        Text("\(testShowPreview[num].0.category.rawValue)")
-                            .foregroundColor(.secondary)
+                NavigationLink(destination: {
+                    SingleSeriesView(serie: testShowPreview[num].0)
+                }, label: {
+                    ZStack(alignment: .bottomLeading){
                         
-                    }.padding()
-                }
-                .padding(.horizontal, 4)
-                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
-                .overlay(RoundedRectangle(cornerRadius: cornerRadiusValue)
-                            .stroke(.gray, lineWidth: 1))
-                .tag(num)
+                        testShowPreview[num].1
+                            .resizable()
+                            .cornerRadius(cornerRadiusValue)
+                        
+                        LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
+                            .opacity(0.7)
+                            .cornerRadius(cornerRadiusValue)
+                        
+                        VStack(alignment: .leading, spacing: 2){
+                            Text(testShowPreview[num].0.name)
+                                .font(.largeTitle)
+                                .bold()
+                                .foregroundColor(.white)
+                            Text("\(testShowPreview[num].0.category.rawValue)")
+                                .foregroundColor(.secondary)
+                            
+                        }.padding()
+                    }
+                    .padding(.horizontal, 4)
+                    .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
+                    .overlay(RoundedRectangle(cornerRadius: cornerRadiusValue)
+                                .stroke(.gray, lineWidth: 1))
+                    .tag(num)
+                })
             }
         }
         .tabViewStyle(.page)
@@ -103,6 +107,7 @@ struct EpisodeSelector: View{
             episode.isWatched = true
         }, label: {
             HStack{
+                
                 VStack{
                     if(episode.isWatched == true){
                         Image(systemName: "checkmark")
@@ -111,6 +116,7 @@ struct EpisodeSelector: View{
                     }
                 }
                 .frame(width: UIScreen.screenWidth/20)
+                
                 VStack(alignment: .leading){
                     Text("Episodio \(episode.number) - \(episode.title)")
                         .foregroundColor(.primary)
@@ -122,6 +128,7 @@ struct EpisodeSelector: View{
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding()
+                
                 Image(systemName: "play.circle.fill")
                     .resizable()
                     .scaledToFit()

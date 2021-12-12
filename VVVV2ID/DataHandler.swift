@@ -31,7 +31,103 @@ class MovieContainer: ObservableObject{
     }
 }
 
+class RecentMovieContainer: ObservableObject{
+    @Published private var movies: [Movie]
+    
+    init(){
+        self.movies = []
+    }
+    
+    init(movieArray: [Movie]){
+        self.movies = movieArray
+    }
+    
+    func GetAllMovies()->[Movie]{
+        return self.movies
+    }
+    
+    func GetMovieByName(title: String)->Movie{
+        var index: Int = 0
+        while self.movies[index].name != title{
+            index += 1
+        }
+        return self.movies[index]
+    }
+}
+
 class SeriesContainer: ObservableObject{
+    @Published private var series: [Series]
+    
+    init(){
+        self.series = []
+    }
+    
+    init(seriesArray: [Series]){
+        self.series = seriesArray
+    }
+    
+    func GetAllSeries()->[Series]{
+        return self.series
+    }
+    
+    func GetSeriesByName(title: String)->Series{
+        var index: Int = 0
+        while self.series[index].name != title{
+            index += 1
+        }
+        return self.series[index]
+    }
+    
+    func GetAllTVSeries()->[Series]{
+        var tvSeries: [Series] = []
+        for x in 0..<self.series.count{
+            if self.series[x].category == .TvSeries{
+                tvSeries.append(self.series[x])
+            }
+        }
+        return tvSeries
+    }
+    
+    func GetTVSeriesByName(title: String)->Series{
+        var tvSeries: [Series] = []
+        for x in 0..<self.series.count{
+            if self.series[x].category == .TvSeries{
+                tvSeries.append(self.series[x])
+            }
+        }
+        var index = 0
+        while tvSeries[index].name != title{
+            index += 1
+        }
+        return tvSeries[index]
+    }
+    
+    func GetAllAnime()->[Series]{
+        var animes: [Series] = []
+        for x in 0..<self.series.count{
+            if self.series[x].category == .Anime{
+                animes.append(self.series[x])
+            }
+        }
+        return animes
+    }
+    
+    func GetAnimeByName(title: String)->Series{
+        var animes: [Series] = []
+        for x in 0..<self.series.count{
+            if self.series[x].category == .Anime{
+                animes.append(self.series[x])
+            }
+        }
+        var index = 0
+        while animes[index].name != title{
+            index += 1
+        }
+        return animes[index]
+    }
+}
+
+class RecentSeriesContainer: ObservableObject{
     @Published private var series: [Series]
     
     init(){

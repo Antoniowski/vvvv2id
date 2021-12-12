@@ -12,6 +12,8 @@ struct VVVV2IDApp: App {
     let persistenceController = PersistenceController.shared
     @StateObject var movieContainer = MovieContainer()
     @StateObject var seriesContainer = SeriesContainer(seriesArray: testSeries)
+    @StateObject var recentSeries: RecentSeriesContainer = RecentSeriesContainer(seriesArray: testRecents)
+    @StateObject var recentFilms: RecentMovieContainer = RecentMovieContainer()
 
     var body: some Scene {
         WindowGroup {
@@ -20,6 +22,8 @@ struct VVVV2IDApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(movieContainer)
                 .environmentObject(seriesContainer)
+                .environmentObject(recentFilms)
+                .environmentObject(recentSeries)
         }
     }
 }

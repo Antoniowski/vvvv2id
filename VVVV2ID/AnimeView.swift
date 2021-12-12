@@ -10,6 +10,7 @@ import SwiftUI
 struct AnimeView: View{
     @EnvironmentObject var movieContainer: MovieContainer
     @EnvironmentObject var seriesContainer: SeriesContainer
+    @EnvironmentObject var recentSeries: RecentSeriesContainer
         
     var body: some View{
         ScrollView{
@@ -27,8 +28,8 @@ struct AnimeView: View{
                 .padding(.horizontal)
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 10){
-                        ForEach(0...9, id: \.self){_ in
-                            ElementSelector(show: evangelion)
+                        ForEach(recentSeries.GetAllSeries(), id: \.self){anime in
+                            ElementSelector(show: anime)
                         }
                     }
                     .padding(.init(top: 2, leading: 4, bottom: 2, trailing: 4))

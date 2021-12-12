@@ -26,12 +26,12 @@ struct AnimeView: View{
                 }
                 .padding(.horizontal)
                 ScrollView(.horizontal, showsIndicators: false){
-                    HStack{
+                    HStack(spacing: 10){
                         ForEach(0...9, id: \.self){_ in
                             ElementSelector(show: evangelion)
                         }
                     }
-                    .padding(2)
+                    .padding(.init(top: 2, leading: 4, bottom: 2, trailing: 4))
                 }
                 .frame(width: UIScreen.screenWidth)
                 .padding(.horizontal)
@@ -49,12 +49,12 @@ struct AnimeView: View{
                 }
                 .padding(.horizontal)
                 ScrollView(.horizontal, showsIndicators: false){
-                    HStack{
+                    HStack(spacing: 10){
                         ForEach(seriesContainer.GetAllSeries(), id: \.self){anime in
                             ElementSelector(show: anime)
                         }
                     }
-                    .padding(2)
+                    .padding(.init(top: 2, leading: 4, bottom: 2, trailing: 4))
                 }
                 .frame(width: UIScreen.screenWidth)
                 .padding(.horizontal)

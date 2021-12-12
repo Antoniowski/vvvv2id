@@ -22,7 +22,7 @@ enum Genres: String{
     case Horror
     case Fantascienza
     case Fantasy
-    case Misterry
+    case Mistery
     case Thriller
     case Western
     case Shonen

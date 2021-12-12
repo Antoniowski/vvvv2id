@@ -17,19 +17,20 @@ struct ElementSelector: View{
         NavigationLink(destination: {
             SingleSeriesView(serie: show)
         }, label: {
-        VStack{
-            show.poster
-                .resizable()
-                .frame(width: UIScreen.screenWidth/4, height: UIScreen.screenHeight/6)
-                .cornerRadius(cornerRadiusValue)
-                .shadow(color: .white, radius: 2, x: 0, y: 0)
-
-            Text(show.name)
-                .font(.system(size: 10))
-                .multilineTextAlignment(.center)
-                .foregroundColor(.primary)
-                .frame(minWidth: 0, maxWidth: UIScreen.screenWidth/5, minHeight: 0, maxHeight: UIScreen.screenHeight/22)
-        }
+            VStack{
+                show.poster
+                    .resizable()
+                    .frame(width: UIScreen.screenWidth/4, height: UIScreen.screenHeight/6)
+                    .cornerRadius(cornerRadiusValue)
+                    .overlay(RoundedRectangle(cornerRadius: cornerRadiusValue)
+                                .stroke(.gray, lineWidth: 1))
+                
+                Text(show.name)
+                    .font(.system(size: 10))
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.primary)
+                    .frame(minWidth: 0, maxWidth: UIScreen.screenWidth/5, minHeight: 0, maxHeight: UIScreen.screenHeight/22)
+            }
         })
     }
 }
@@ -41,10 +42,10 @@ struct ElementSelector: View{
 
 
 struct MainElement: View{
+    
     var shows: [GenericInfos] = []
     var numOfElement = 3
-    
-    private var timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+    private var timer = Timer.publish(every: 6, on: .main, in: .common).autoconnect()
     
     @State private var currentIndex = 0
     
@@ -52,8 +53,15 @@ struct MainElement: View{
         TabView(selection: $currentIndex){
             ForEach(0..<numOfElement){ num in
                 ZStack(alignment: .bottomLeading){
+                    
+                    Image("DemonSlayerFullPic")
+                        .resizable()
+                        .cornerRadius(cornerRadiusValue)
+                    
                     LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
                         .opacity(0.7)
+                        .cornerRadius(cornerRadiusValue)
+                    
                     VStack(alignment: .leading, spacing: 2){
                         Text("Demon Slayer")
                             .font(.largeTitle)
@@ -64,9 +72,10 @@ struct MainElement: View{
                         
                     }.padding()
                 }
+                .padding(.horizontal, 4)
                 .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
-                .background(Image("DemonSlayerFullPic")
-                                .resizable())
+                .overlay(RoundedRectangle(cornerRadius: cornerRadiusValue)
+                            .stroke(.gray, lineWidth: 1))
                 .tag(num)
             }
         }
@@ -86,11 +95,13 @@ struct EpisodeSelector: View{
     @EnvironmentObject var movieContainer: MovieContainer
     @EnvironmentObject var seriesContainer: SeriesContainer
     
-    var show: Series
-    var episode: Episode
+    @Binding var show: Series
+    @State var episode: Episode
     
     var body: some View{
-        Button(action: {}, label: {
+        Button(action: {
+            episode.isWatched = true
+        }, label: {
             HStack{
                 VStack{
                     if(episode.isWatched == true){
@@ -145,33 +156,33 @@ struct SearchElement: View{
         NavigationLink(destination: {
             SingleSeriesView(serie: show)
         }, label: {
-        HStack(spacing: 15){
-            show.poster
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(cornerRadiusValue)
-                .shadow(color: .white, radius: 1, x: 0, y: 0)
-            
-            VStack(alignment: .leading){
-                Text("\(show.name)")
-                    .font(.title3)
-                    .bold()
-                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                Text("**Genere:** \(showGenres) \n**Anno:** \(String(show.yearOfRelease)) \n**Regista:** \(show.director)").font(.caption).foregroundColor(.secondary)
-                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-            }
-            .frame(minWidth: 0, maxWidth: .infinity)
-            VStack{
-                if show.watched == true{
-                    Image(systemName: "checkmark")
-                        .foregroundColor(.green)
-                }
+            HStack(spacing: 15){
+                show.poster
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(cornerRadiusValue)
+                    .shadow(color: .white, radius: 1, x: 0, y: 0)
                 
+                VStack(alignment: .leading){
+                    Text("\(show.name)")
+                        .font(.title3)
+                        .bold()
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    Text("**Genere:** \(showGenres) \n**Anno:** \(String(show.yearOfRelease)) \n**Regista:** \(show.director)").font(.caption).foregroundColor(.secondary)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                VStack{
+                    if show.watched == true{
+                        Image(systemName: "checkmark")
+                            .foregroundColor(.green)
+                    }
+                    
+                }
+                .frame(width: UIScreen.screenWidth/20, height: 5, alignment: .center)
+                .padding(5)
             }
-            .frame(width: UIScreen.screenWidth/20, height: 5, alignment: .center)
-            .padding(5)
-        }
-        .frame(height: UIScreen.screenHeight/8)
+            .frame(height: UIScreen.screenHeight/8)
             .padding(5)
             
         })

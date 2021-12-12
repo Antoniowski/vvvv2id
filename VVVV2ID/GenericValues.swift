@@ -31,26 +31,26 @@ var aotEpisodes: [Episode] = [
 ]
 
 var jojoEpisodes: [Episode] = [
-    Episode(id: UUID(), title: "Golden Wind", description: "", number: 1, isWatched: true),
-    Episode(id: UUID(), title: "Arriva Bucciarati", description: "", number: 2, isWatched: true),
-    Episode(id: UUID(), title: "Il malavitoso dietro le sbarre", description: "", number: 3, isWatched: true),
-    Episode(id: UUID(), title: "L'ingresso nella banda", description: "", number: 4, isWatched: true)
+    Episode(id: UUID(), title: "Golden Wind", description: jojo5episode1, number: 1, isWatched: true),
+    Episode(id: UUID(), title: "Arriva Bucciarati", description: jojo5episode2, number: 2, isWatched: true),
+    Episode(id: UUID(), title: "Il malavitoso dietro le sbarre", description: jojo5episode3, number: 3, isWatched: true),
+    Episode(id: UUID(), title: "L'ingresso nella banda", description: jojo5episode4, number: 4, isWatched: true)
 ]
 
 var aot4Episodes: [Episode] = [
-    Episode(id: UUID(), title: "Al di là del mare", description: "", number: 60, isWatched: true),
-    Episode(id: UUID(), title: "Il treno di mezzanotte", description: "", number: 61, isWatched: false),
-    Episode(id: UUID(), title: "La porta della speranza", description: "", number: 62, isWatched: false),
+    Episode(id: UUID(), title: "Al di là del mare", description: aot4Episode1, number: 60, isWatched: true),
+    Episode(id: UUID(), title: "Il treno di mezzanotte", description: aot4Episode2, number: 61, isWatched: false),
+    Episode(id: UUID(), title: "La porta della speranza", description: aot4Episode3, number: 62, isWatched: false),
 ]
 
 var OPMEpisodes: [Episode] = [
-    Episode(id: UUID(), title: "L'uomo più forte", description: "", number: 1, isWatched: true),
-    Episode(id: UUID(), title: "Il cybord solitario", description: "", number: 2, isWatched: true),
+    Episode(id: UUID(), title: "L'uomo più forte", description: opmEpisode1, number: 1, isWatched: true),
+    Episode(id: UUID(), title: "Il cybord solitario", description: opmEpisode2, number: 2, isWatched: true),
 ]
 
 var deathNoteEpisodes: [Episode] = [
-    Episode(id: UUID(), title: "Rinascita", description: "", number: 1, isWatched: false),
-    Episode(id: UUID(), title: "Confronto", description: "", number: 2, isWatched: false),
+    Episode(id: UUID(), title: "Rinascita", description: deathNoteEpisode1, number: 1, isWatched: false),
+    Episode(id: UUID(), title: "Confronto", description: deathNoteEpisode2, number: 2, isWatched: false),
 ]
 
 
@@ -67,7 +67,7 @@ var attackOnTitan4 = Series(id: UUID(), name: "Attack on Titan - Final Season", 
 
 var onePunchMan = Series(id: UUID(), name: "One Punch Man", description: opmDescription, genres: [.Azione, .Commedia], poster: Image("OPPoster"), director: "Shingo Natsume", yearOfRelease: 2015, favoriteNum: 39138, views: 492043, isFavorite: false, watched: true, category: .anime, episodesNum: 12, episodes: OPMEpisodes)
 
-var deathNote = Series(id: UUID(), name: "Death Note", description: deathNoteDescription, genres: [.Misterry, .Thriller], poster: Image("DeathNotePoster"), director: "Tetsurō Araki", yearOfRelease: 2006, favoriteNum: 2357859, views: 4048349, isFavorite: false, watched: true, category: .anime, episodesNum: 37, episodes: deathNoteEpisodes)
+var deathNote = Series(id: UUID(), name: "Death Note", description: deathNoteDescription, genres: [.Mistery, .Thriller], poster: Image("DeathNotePoster"), director: "Tetsurō Araki", yearOfRelease: 2006, favoriteNum: 2357859, views: 4048349, isFavorite: false, watched: true, category: .anime, episodesNum: 37, episodes: deathNoteEpisodes)
 
 
 

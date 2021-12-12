@@ -80,6 +80,6 @@ var demonSlayer = Series(id: UUID(), name: "Demon Slayer", description: demonSla
 
 var testSeries: [Series] = [evangelion, attackOnTitan, jojoVentoAureo, deathNote, onePunchMan, attackOnTitan4, demonSlayer]
 
-var testShowPreview: [(Series, Image)] = [(demonSlayer, Image("DemonSlayerFullPic")), (attackOnTitan4, Image("AoT4FullPic"))]
+var testShowPreview: [(Series, Image)] = [(demonSlayer, Image("DemonSlayerFullPic")), (attackOnTitan4, Image("AoT4FullPic")), (onePunchMan, Image("opmFullPic"))]
 
 var testRecents: [Series] = [attackOnTitan4, onePunchMan]

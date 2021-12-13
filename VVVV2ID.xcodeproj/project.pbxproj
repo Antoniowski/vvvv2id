@@ -24,6 +24,7 @@
 		6AC1FDF52762B681001FFBD9 /* GenericValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1FDF42762B681001FFBD9 /* GenericValues.swift */; };
 		6AC1FDF72762BD71001FFBD9 /* BackendItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1FDF62762BD71001FFBD9 /* BackendItems.swift */; };
 		6AC1FDF92762CA18001FFBD9 /* AnimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1FDF82762CA18001FFBD9 /* AnimeView.swift */; };
+		6AE4D34A2767FE3F0068B22D /* vvvvidLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AE4D3492767FE3F0068B22D /* vvvvidLaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		6AC1FDF42762B681001FFBD9 /* GenericValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericValues.swift; sourceTree = "<group>"; };
 		6AC1FDF62762BD71001FFBD9 /* BackendItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendItems.swift; sourceTree = "<group>"; };
 		6AC1FDF82762CA18001FFBD9 /* AnimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeView.swift; sourceTree = "<group>"; };
+		6AE4D3492767FE3F0068B22D /* vvvvidLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = vvvvidLaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				6AC1FDCC2762B4E4001FFBD9 /* Persistence.swift */,
 				6AC1FDCE2762B4E4001FFBD9 /* VVVV2ID.xcdatamodeld */,
 				6AC1FDC92762B4E4001FFBD9 /* Preview Content */,
+				6AE4D3492767FE3F0068B22D /* vvvvidLaunchScreen.storyboard */,
 			);
 			path = VVVV2ID;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AE4D34A2767FE3F0068B22D /* vvvvidLaunchScreen.storyboard in Resources */,
 				6AC1FDCB2762B4E4001FFBD9 /* Preview Assets.xcassets in Resources */,
 				6AC1FDC82762B4E4001FFBD9 /* Assets.xcassets in Resources */,
 			);
@@ -473,6 +477,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = vvvvidLaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -503,6 +508,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = vvvvidLaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

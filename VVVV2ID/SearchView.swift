@@ -62,7 +62,7 @@ struct SearchView: View{
                             .foregroundColor(.secondary)
                             .font(.system(size: UIScreen.screenHeight/5))
                             .opacity(0.4)
-                        Text("Cosa ti va di vedere oggi?")
+                        Text("Cosa vuoi vedere oggi?")
                             .foregroundColor(.secondary)
                             .opacity(0.4)
                         VStack{}.frame(height: UIScreen.screenHeight/5)

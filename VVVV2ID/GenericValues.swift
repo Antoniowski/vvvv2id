@@ -45,7 +45,7 @@ var aot4Episodes: [Episode] = [
 
 var OPMEpisodes: [Episode] = [
     Episode(id: UUID(), title: "L'uomo più forte", description: opmEpisode1, number: 1, isWatched: true),
-    Episode(id: UUID(), title: "Il cybord solitario", description: opmEpisode2, number: 2, isWatched: true),
+    Episode(id: UUID(), title: "Il cyborg solitario", description: opmEpisode2, number: 2, isWatched: true),
 ]
 
 var deathNoteEpisodes: [Episode] = [

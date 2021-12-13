@@ -14,6 +14,7 @@ struct AnimeView: View{
         
     var body: some View{
         ScrollView{
+            Spacer()
 //          SEZIONE NOVITA'
             MainElement()
                 .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
@@ -26,7 +27,8 @@ struct AnimeView: View{
                         .bold()
                     Spacer()
                 }
-                .padding(.horizontal)
+                .padding(.leading, 20)
+
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 10){
                         ForEach(recentSeries.GetAllSeries(), id: \.self){anime in
@@ -49,7 +51,7 @@ struct AnimeView: View{
                         .bold()
                     Spacer()
                 }
-                .padding(.horizontal)
+                .padding(.leading, 20)
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 10){
                         ForEach(seriesContainer.GetAllSeries(), id: \.self){anime in
@@ -71,7 +73,7 @@ struct AnimeView: View{
                         .bold()
                     Spacer()
                 }
-                .padding(.horizontal)
+                .padding(.leading, 20)
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 10){
                         ForEach(seriesContainer.GetAllSeries(), id: \.self){anime in
@@ -96,7 +98,7 @@ struct AnimeView: View{
                         .bold()
                     Spacer()
                 }
-                .padding(.horizontal)
+                .padding(.leading, 20)
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 10){
                         ForEach(seriesContainer.GetAllSeries(), id: \.self){anime in
@@ -121,7 +123,7 @@ struct AnimeView: View{
                         .bold()
                     Spacer()
                 }
-                .padding(.horizontal)
+                .padding(.leading, 20)
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 10){
                         ForEach(seriesContainer.GetAllSeries(), id: \.self){anime in

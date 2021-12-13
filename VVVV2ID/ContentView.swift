@@ -60,6 +60,7 @@ private extension ContentView{
                         })
                     })
                 }
+                .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

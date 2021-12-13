@@ -11,7 +11,7 @@ struct ElementSelector: View{
     @EnvironmentObject var movieContainer: MovieContainer
     @EnvironmentObject var seriesContainer: SeriesContainer
     
-    var show: Series
+    @State var show: Series
     
     var body: some View{
         NavigationLink(destination: {
@@ -22,8 +22,7 @@ struct ElementSelector: View{
                     .resizable()
                     .frame(width: UIScreen.screenWidth/4, height: UIScreen.screenHeight/6)
                     .cornerRadius(cornerRadiusValue)
-                    .overlay(RoundedRectangle(cornerRadius: cornerRadiusValue)
-                                .stroke(.gray, lineWidth: 1))
+                
                 
                 Text(show.name)
                     .font(.system(size: 10))
@@ -32,6 +31,21 @@ struct ElementSelector: View{
                     .frame(minWidth: 0, maxWidth: UIScreen.screenWidth/5, minHeight: 0, maxHeight: UIScreen.screenHeight/22)
             }
         })
+            .contextMenu{
+                if show.isFavorite{
+                    Button(action: {show.isFavorite.toggle()}, label: {
+                        Label("Rimuovi dai preferiti", systemImage: "heart.slash.fill")
+                    })
+                }else{
+                    Button(action: {show.isFavorite.toggle()}, label: {
+                        Label("Aggiungi ai preferiti", systemImage: "heart.fill")
+                    })
+                }
+                
+                Button(action: {}, label: {
+                    Label("Guarda più tardi", systemImage: "list.bullet.rectangle.portrait.fill")
+                })
+            }
     }
 }
 
@@ -59,11 +73,9 @@ struct MainElement: View{
                         
                         testShowPreview[num].1
                             .resizable()
-                            .cornerRadius(cornerRadiusValue)
                         
                         LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
                             .opacity(0.7)
-                            .cornerRadius(cornerRadiusValue)
                         
                         VStack(alignment: .leading, spacing: 2){
                             Text(testShowPreview[num].0.name)
@@ -75,10 +87,7 @@ struct MainElement: View{
                             
                         }.padding()
                     }
-                    .padding(.horizontal, 4)
                     .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
-                    .overlay(RoundedRectangle(cornerRadius: cornerRadiusValue)
-                                .stroke(.gray, lineWidth: 1))
                     .tag(num)
                 })
             }

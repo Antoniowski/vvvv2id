@@ -75,7 +75,7 @@ struct MainElement: View{
                             .resizable()
                         
                         LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
-                            .opacity(0.7)
+                            .opacity(1)
                         
                         VStack(alignment: .leading, spacing: 2){
                             Text(testShowPreview[num].0.name)
@@ -97,7 +97,6 @@ struct MainElement: View{
             withAnimation{
                 currentIndex = currentIndex < numOfElement ? currentIndex + 1 : 0
             }
-            
         })
     }
 }

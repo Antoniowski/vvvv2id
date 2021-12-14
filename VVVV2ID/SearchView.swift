@@ -12,6 +12,9 @@ struct SearchView: View{
     @EnvironmentObject var seriesContainer: SeriesContainer
     
     @State var searchText: String = ""
+    @State var rotazione: Double = 0
+    
+    private var timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     var searchFilmResults: [Movie]{
         if searchText.isEmpty{
             return []
@@ -62,6 +65,16 @@ struct SearchView: View{
                             .foregroundColor(.secondary)
                             .font(.system(size: UIScreen.screenHeight/5))
                             .opacity(0.4)
+                            .rotationEffect(.degrees(rotazione))
+                            .onReceive(timer, perform: {_ in
+                                withAnimation(.spring()){
+                                    if rotazione == 0{
+                                        rotazione += 360
+                                    }else{
+                                        rotazione -= 360
+                                    }
+                                }
+                            })
                         Text("Cosa vuoi vedere oggi?")
                             .foregroundColor(.secondary)
                             .opacity(0.4)
